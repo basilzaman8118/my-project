@@ -1,0 +1,107 @@
+<!-- 🌟 HEADER -->
+<header class="header">
+  <div class="logo">
+    <img src="assets/hospital-logo.png" alt="Hospital Logo" />
+    <h1>LifeCare Hospital</h1>
+  </div>
+
+  <nav class="nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#departments">Departments</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- 🏥 HERO SECTION -->
+ 
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h2>Your Health, Our Priority</h2>
+    <p>Providing world-class medical services with compassion and care.</p>
+    <button class="hero-btn">Book an Appointment</button>
+  </div>
+</section>
+
+<!-- 🧠 ABOUT SECTION -->
+<section id="about" class="section about">
+  <h2>About Us</h2>
+  <p>
+    LifeCare Hospital is committed to delivering exceptional healthcare
+    with state-of-the-art facilities, experienced doctors, and compassionate
+    staff. Our mission is to provide affordable and quality medical care to all.
+  </p>
+</section>
+
+<!-- 🩺 DEPARTMENTS -->
+<section id="departments" class="section departments">
+  <h2>Our Departments</h2>
+  <div class="dept-grid">
+    <div class="card">Cardiology</div>
+    <div class="card">Neurology</div>
+    <div class="card">Orthopedics</div>
+    <div class="card">Pediatrics</div>
+    <div class="card">Radiology</div>
+    <div class="card">Dermatology</div>
+  </div>
+</section>
+
+<!-- 👨‍⚕️ DOCTORS -->
+<section id="doctors" class="section doctors">
+  <h2>Meet Our Doctors</h2>
+  <div class="doctor-grid">
+    <div class="doctor-card">
+      <img src="assets/doctor1.jpg" alt="Doctor" />
+      <h3>Dr. Abhijith</h3>
+      <p>Cardiologist</p>
+    </div>
+    <div class="doctor-card">
+      <img src="assets/doctor2.jpg" alt="Doctor" />
+      <h3>Dr. Sulaiman</h3>
+      <p>Neurologist</p>
+    </div>
+    <div class="doctor-card">
+      <img src="assets/doctor3.jpg" alt="Doctor" />
+      <h3>Dr. Arif Khan</h3>
+      <p>Pediatrician</p>
+    </div>
+  </div>
+</section>
+
+<!-- 📞 CONTACT -->
+<section id="contact" class="section contact">
+  <h2>Contact Us</h2>
+  <p>Email: contact@lifecarehospital.com</p>
+  <p>Phone: +1 234 567 890</p>
+  <p>Address: 123 Al Safa, Jeddah</p>
+</section>
+
+<!-- 💬 Chatbot Floating Icon -->
+<div class="chatbot-icon" (click)="toggleChat()">
+  <img src="assets/chatbot-icon.png" alt="Chatbot" />
+</div>
+
+<!-- Chatbot Popup -->
+<div class="chatbot-popup" *ngIf="showChat">
+  <div class="chatbot-header">
+    <h3>AI Assistant 🤖</h3>
+    <button class="close-btn" (click)="toggleChat()">✖</button>
+  </div>
+
+  <div class="chatbot-body">
+    <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+      <b>{{ msg.sender }}:</b> {{ msg.text }}
+    </div>
+  </div>
+
+  <div class="chatbot-input">
+    <input [(ngModel)]="userQuestion" placeholder="Ask your question..." />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2025 LifeCare Hospital. All Rights Reserved.</p>
+</footer>
